@@ -1,0 +1,95 @@
+:root{
+    --width: 100px;
+    --height: 50px;
+    --quntity: 10;
+    --time-running:10s
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body,html{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+}
+h1 span{
+    color: darksalmon;
+}
+.slider{
+    margin-top: 15px;
+    margin-right: auto ;
+    margin-right: auto;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    mask-image: linear-gradient(to right , transparent , #000 10% 90% , transparent);
+}
+.list{
+    position: relative;
+    list-style: none;
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quntity));
+}
+.list .items{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    left: 100%;
+    animation: autoRun var(--time-running) linear infinite;   
+    transition: transform 0.2s linear;
+}
+.slider:hover .items{
+    animation-play-state: paused;
+}
+.items:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s linear;
+}
+@keyframes autoRun{
+    from{
+        left:100%;
+    }
+    to{
+        left:-100px;
+    } 
+}
+.items img{
+    width: var(--width);
+    height: 100%;
+}
+.list .items:nth-child(1){
+    animation-delay: calc(var(--time-running) / (var(--quntity) ) * (1- 1));    
+}
+.list .items:nth-child(2){
+    animation-delay: calc(var(--time-running) / (var(--quntity) ) * (2 - 1));
+}
+.list .items:nth-child(3){
+    animation-delay: calc(var(--time-running) / (var(--quntity) ) * (3 - 1));
+}
+.list .items:nth-child(4){
+    animation-delay: calc(var(--time-running) / (var(--quntity) ) * (4 - 1));
+}
+.list .items:nth-child(5){
+    animation-delay: calc(var(--time-running) / (var(--quntity) ) * (5 - 1));
+}
+.list .items:nth-child(6){
+    animation-delay: calc(var(--time-running) / (var(--quntity) ) * (6 - 1));
+}
+.list .items:nth-child(7){
+    animation-delay: calc(var(--time-running) / (var(--quntity) ) * (7 - 1));
+}
+.list .items:nth-child(8){
+    animation-delay: calc(var(--time-running) / (var(--quntity) ) * (8 - 1));
+}
+.list .items:nth-child(9){
+    animation-delay: calc(var(--time-running) / (var(--quntity) ) * (9 - 1));
+}
+.list .items:nth-child(10){
+    animation-delay: calc(var(--time-running) / (var(--quntity) ) * (10 - 1));
+}
